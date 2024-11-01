@@ -13,15 +13,11 @@ document.addEventListener("DOMContentLoaded", () => {
     afficherSection(1);
 
     function validerInformationsPersonnelles() {
-        return nomInput.value.trim().length > 0 &&
-            prenomInput.value.trim().length > 0 &&
-            ageInput.value >= 18 && ageInput.value <= 100;
+        return nomInput.value.trim().length > 0 && prenomInput.value.trim().length > 0 && ageInput.value >= 18 && ageInput.value <= 100;
     }
 
     function validerContactProfessionnel() {
-        return emailInput.value.trim().length > 0 &&
-            telephoneInput.value.trim().length > 0 &&
-            adresseInput.value.trim().length > 0;
+        return emailInput.value.trim().length > 0 && telephoneInput.value.trim().length > 0 && adresseInput.value.trim().length > 0;
     }
 
     function validerFeedback() {
@@ -31,9 +27,11 @@ document.addEventListener("DOMContentLoaded", () => {
     function basculerEtatBouton(indexSection) {
         if (indexSection === 1) {
             boutonsSuivant[0].disabled = !validerInformationsPersonnelles();
-        } else if (indexSection === 2) {
+        }
+        else if (indexSection === 2) {
             boutonsSuivant[1].disabled = !validerContactProfessionnel();
-        } else if (indexSection === 3) {
+        }
+        else if (indexSection === 3) {
             boutonEnvoyer.disabled = !validerFeedback();
         }
     }
@@ -71,7 +69,8 @@ document.addEventListener("DOMContentLoaded", () => {
             alert("Récapitulatif des informations:\n" + recapitulatif);
             document.getElementById("formulaire").reset();
             afficherSection(1);
-        } else {
+        }
+        else {
             alert("Veuillez compléter tous les champs requis.");
         }
     };
