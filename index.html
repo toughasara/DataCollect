@@ -13,34 +13,41 @@
     <main class="container mt-5 ">
         <section class="card alert alert-primary">
             <div class="card-body ">
-                <form id="multiSectionForm" onsubmit="submitForm(event) ">
+                <form id="formulaire" onsubmit="submitForm(event) ">
                     <!-- Informations Personnelles -->
                     <div class="section" id="section1">
                         <h2 class="card-title text-center text-primary">Informations Personnelles</h2>
                         <div class="form-group text-primary">
                             <label for="name" >Nom:</label>
                             <input name="name" placeholder="Votre nom" type="text" id="name" class="form-control" >
+                            <small class="text-danger"></small>
                         </div>
                         <div class="form-group text-primary">
                             <label for="prename">Prenom:</label>
                             <input name="prename" placeholder="Votre prenom" type="text" id="prename" class="form-control" >
+                            <small class="text-danger"></small>
                         </div>
                         <div class="form-group text-primary">
                             <label for="age">Age:</label>
                             <input name="number" placeholder="Votre age" type="number" id="age" class="form-control" >
+                            <small class="text-danger"></small>
                         </div>
                         <div class="form-group text-primary">
                             <label for="pays">Pays:</label>
                             <input name="pays" placeholder="Votre pays" type="text" id="pays" class="form-control" >
+                            <small class="text-danger"></small>
+                            <small class="form-test text-danger">optionel !</small>
                         </div>
-                        <!-- <div class="form-group">
-                            <label for="genre">genre:</label>
-                            <input name="number" placeholder="Votre age" type="number" id="genre" class="form-control" >
-                            <select name="" id="">
-                                <option value="">homme</option>
-                                <option value="">femme</option>
+                        <div class="form-group col-md-4 text-primary">
+                            <label for="inputState">genre :</label>
+                            <select id="inputState" class="form-control">
+                            <option selected>Choose...</option>
+                            <option>femme</option>
+                            <option>homme</option>
+                            <option>autre</option>
                             </select>
-                        </div> -->
+                            <small class="form-test text-danger">optionel !</small>
+                        </div>
                         <div class="d-flex justify-content-end">
                             <button type="button" class="btn btn-success bg-primary" onclick="nextSection(2)">Suivant</button>
                         </div>
@@ -51,15 +58,18 @@
                         <h2 class="card-title text-center text-primary">Contact Professionnel</h2>
                         <div class="form-group text-primary">
                             <label for="email">Email:</label>
-                            <input name="email" placeholder="Votre email" type="email" id="email" class="form-control" >                        
+                            <input name="email" placeholder="Votre email" type="email" id="email" class="form-control" > 
+                            <small class="text-danger"></small>                       
                         </div>
                         <div class="form-group text-primary">
                             <label for="tele">Numero de telephone:</label>
                             <input name="telephone" placeholder="Votre numero de telephone" type="number" id="tele" class="form-control" >
+                            <small class="text-danger"></small>
                         </div>
                         <div class="form-group text-primary">
                             <label for="adresse">Adresse :</label>
                             <input name="adresse" placeholder="Votre adresse" type="text" id="adresse" class="form-control" >
+                            <small class="text-danger"></small>
                             <small class="form-test text-muted">Nous ne partagerons jamais vos informations.</small>
                         </div>
                         <div class="d-flex justify-content-between">
@@ -74,10 +84,11 @@
                         <div class="form-group text-primary">
                             <label for="feedback">Commentaires sur la satisfaction au travail:</label>
                             <textarea name="feedback" placeholder="ecrire..."id="feedback" rows="4" class="form-control" ></textarea>
+                            <small class="text-danger"></small>
                         </div>
                         <div class="d-flex justify-content-between">
                             <button type="button" class="btn btn-secondary bg-light text-primary" onclick="prevSection(2)">Précédent</button>
-                            <button type="submit" class="btn btn-primary">Envoyer</button>
+                            <button type="submit" class="btn btn-primary" onclick="Verifier()">Envoyer</button>
                         </div>
                     </div>
                 </form>
